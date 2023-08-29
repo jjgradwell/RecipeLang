@@ -4,7 +4,7 @@ Recipes are stored in a plain text file with the extension .rcp and is loosely b
 
 ## File Meta Data
 
-Each piece of meta data is defined using the @ symbol followed by a single word. The text for the meta data is tab delimited.
+Each piece of meta data is defined using the @ symbol followed by a single word. The text for the meta data is separated by a tab.
 
 
 `@name` Contains the name of the recipe

@@ -8,14 +8,14 @@ class RecipeLang
   public $lang, $meta, $timers, $cookware, $ingredients, $details;
 
   function __construct() {
-    $this->dir = $_SERVER['DOCUMENT_ROOT'] . "/recipes/rcp/";
+    $this->dir = "./rcp/";
     $this->frac = [
-      '1/4' => "\u00bc", '1/2' => "\u00bd", '3/4' => "\u00be", '1/3' => "\u2153", '2/3' => "\u2154",
-      '1/5' => "\u2155", '2/5' => "\u2156", '3/5' => "\u2157", '4/5' => "\u2158", '1/6' => "\u2159",
-      '5/6' => "\u215a", '1/8' => "\u215b", '3/8' => "\u215c", '5/8' => "\u215d", '7/8' => "\u215e"
+      "1/4" => "\u00bc", "1/2" => "\u00bd", "3/4" => "\u00be", "1/3" => "\u2153", "2/3" => "\u2154",
+      "1/5" => "\u2155", "2/5" => "\u2156", "3/5" => "\u2157", "4/5" => "\u2158", "1/6" => "\u2159",
+      "5/6" => "\u215a", "1/8" => "\u215b", "3/8" => "\u215c", "5/8" => "\u215d", "7/8" => "\u215e"
     ];
 
-    $this->settings['en'] = [ 'prep', 'cook', '/ (seconds?)/iu', '/ (minutes?)/iu', '/ (hours?)/iu' ];
+    $this->settings["en"] = [ "prep", "cook", "/ (seconds?)/iu", "/ (minutes?)/iu", "/ (hours?)/iu" ];
     $this->settings["fr"] = [ "préparation", "cuisson", "/ second(es|s)?/ui", "/ minutes?/iu", "/ heures?/iu" ];
   }
 
@@ -114,10 +114,8 @@ class RecipeLang
           self::processIngredient( $result ); // Process the ingredient
           if ( isset( $this->section[ $key ] ) ) { // If the section is named
             $this->ingredients[ $this->section[ $key ] ][] = $result; // Add to the section ingredient list
-            //$this->ingredients[ $this->section[ $key ] ] = array_unique( $this->ingredients[ $this->section[ $key ] ] );
           } else {
             $this->ingredients[] = $result; // Add to the general ingredient list
-            //$this->ingredients = array_unique( $this->ingredients );
           }
         }
       } while ( preg_match( $regex, $data ) == true ); // Continue until all have been found

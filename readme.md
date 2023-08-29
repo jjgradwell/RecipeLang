@@ -1,68 +1,48 @@
-# RCP file spec
+# RecipeLang
 
-Recipes are stored in a plain text file with the extension .rcp and is loosely based on CookLang.  Even without using the parser, recipes are human readable, and can be printed as is.
+Concept inspired by CookLang.
+Recipes are text files with fields put directly into each step, in a pre-determined format.  Recipe files are stored in a directory name `rcp` and files within also have the `.rcp` extension.
 
-## File Meta Data
+## Meta Data
 
-Each piece of meta data is defined using the @ symbol followed by a single word. The text for the meta data is separated by a tab.
+Meta data fields can be pretty much anything you like.  Fields are denoted with the `@` character and are limited to a single word followed by a tab and then the information you want to include.  The following fields are some examples:
 
+The following are the only required fields for the meta data section.
 
-`@name` Contains the name of the recipe
+`@name  Hash Browns` The name of this recipe is Hash Browns
 
-`@desc` A description of the recipe
+`@desc  Better than store bought` The description of the recipe
 
-`@category` This holds the category of the recipe, and can contain multiple values that are separated by commas
+`@category  breakfast, snack` This falls into the breakfast and snack categories
 
-`@cuisine` The type of cuisine that the recipe belongs to
+`@yields  4 servings` This recipe makes four servings
 
-`@yields` How many portions this recipe makes
-
-`@prep` The amount of prep time required for the recipe
-
-`@cook` The time spent cooking
-
-`@total` The total time that this recipe takes from start to finish
-
-`@source` Where the recipe came from (eg. the website, family member, cookbook)
-
-`@author` The name of the author of this recipe
-
-`@date` The date that you entered this recipe
-
-When you have finished adding your meta data in the header, separate it from the recipe with 2 blank lines
+When you have finished adding your meta data, separate it from the recipe with 2 blank lines
 
 ## Writing out your recipe
 
-When writing out your recipe, all fields are preceeded by the `@` symbol, and sections within each type are separated using the pipe character `|`
+Each element is delineated using the pipe `|` character
 
 - ingredients are enclosed in curly braces `{}`
+  - ingredients can be just a name, name and measurement, name and method, or all three
   - items made up of multiple ingredients can be included directly within the ingredient (see complex recipe)
+    - `@{carrot|2-3|diced}` We need 2 to 3 carrots that are diced
+    - `@{steak|cut in strips}` Cut the steak into strips
+    - `@{bouquet|@{bay|1 sprig} @{thyme|1 sprig} @{parsley|1 sprig} tied in cheesecloth}` Would denote that the bouquet ingredient is made up of bay, thyme and parsley, and these ingredients will be added to the recipes ingredient list
 - cookware/utensils are enclosed in square braces `[]`
-- timers for a particular steps enclosed it rounded braces `()`
-  - format `@(30 minutes|cook)` will have the time inserted into recipe, and added to the cook timer
-  - format `@(prep|30)` will only add 30 minutes to the prep timer ( time is in minutes )
-
-Examples for each type of field
-
-`@{carrot|2-3|diced}` We need 2 to 3 carrots that are diced
-
-`@{water}` Need water for this step, but however much you may use
-
-`@{bouquet|@{bay|1 sprig} @{thyme|1 sprig} @{parsley|1 sprig} tied in cheesecloth}` Would denote that the bouquet ingredient is made up of bay, thyme and parsley, and these ingredients will be added to the recipes ingredient list
-
-`@{butter|1/4 tbsp|room temp}` We need 1/4 tbsp of butter at room temp
-
-`@[large non-stick frypan]` We need a large non-stick frypan for this step
-
-`@(20 minutes|prep)` This step will take 20 minutes, and the timer will be added to the time to prep the recipe
-
-`@(3 hours|cook)` This step will take 3 hours to cook, and the timer will be added to the cooking time
+  - `@[large non-stick frypan]` add a large non-stick frypan to the cookware required list
+  - `@[pork dolly|jam jar]` add a pork dolly to list and place 'jam jar' after it in brackets
+- timers for a particular steps enclosed in rounded braces `()`
+  - `@(30 minutes|cook)` will have the time inserted into recipe, and added to the cook timer
+  - `@(prep|30)` will only add 30 minutes to the prep timer ( time is in minutes )
+- includes are marked up as follows
+  - `~"Pastry Recipe"` this would insert the 'Pastry Recipe' at the point in the recipe it is found
 
 If you want your recipe ingredients broken down by sections, use the `#` symbol followed by a name.  If you do use named sections, add a blank line after the steps for the section.
 
 General timers can be added to section titles, and they will not be included within the displayed recipe, but rather get added to the overall prep/cook timers.
 
-## Basic Recipe example
+## Basic example
 
 ```
 @name	Easy Crepes
@@ -75,10 +55,10 @@ Pour into a @[bowl] and let stand for @(15 minutes|prep) to thicken
 Melt some @{butter|for frying} in a @[large non-stick fry pan] on a medium heat, then tilt the pan so the butter coats the surface.
 Pour in 1 @[ladle] of batter and tilt again, so that the batter spreads all over the base, then cook for @(1 to 2 minutes|cook), or until it starts to come away from the sides.
 Once golden underneath, flip the pancake over and cook for 1 further minute, or until cooked through.
-Serve straightaway with your favourite topping.
+Serve straightaway with your favourite topping such as @{strawberries|sliced}.
 ```
 
-## Complex Recipe example
+## Complex example
 
 ```
 @name	Melton Mowbray pork pie
@@ -108,3 +88,10 @@ Roll the pork pie filling into a ball and carefully place into the bottom of the
 Remove the pie from the oven and set aside to cool.
 Cut two small holes in the top of the pork pie and pour in the pork jelly mixture (you may need to heat it through gently to loosen the mixture for pouring). Chill in the fridge until the jelly is set.```
 ```
+
+
+### Notes
+
+This is a partially complete project, sections for displaying recipes, shopping lists and searching recipes have still to be completed.
+Indexing and search features are also planned.
+

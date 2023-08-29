@@ -1,0 +1,13 @@
+@lang	en
+@name	Hash Browns
+@desc	A family fav, that's cheaper to make than store bought
+@category	breakfast, brunch, snack
+@cuisine	American
+
+
+Boil the @{potatoes|4 large|peeled and cubed} in a @[large pot] until soft when poked with a @[fork] and transfer the potatoes to a @[bowl] to cool down, discarding the water. @(cook|10)
+Once the potatoes have cooled, shred them using a @[grater] @(prep|5)
+Combine the shredded potatoes, @{mozzarella cheese|1 cup|shredded} and @{corn starch|2 tbsp} in a @[bowl] using your hands @(prep|5)
+Form rectangular patties from the mixture and place on a @[cookie sheet] greased with @{butter|room temp} allowing space between, and brush with @{oil|to baste} to make them shine. @(prep|2)
+Bake for @(10 minutes|cook) at 350F in the oven (or until golden brown).
+Serve with @{ketchup|for dip} for dipping

@@ -1,0 +1,13 @@
+@lang	en
+@name	Starbucks Iced Caramel Macchiato
+@desc	A copycat recipe that reminds me of a Starbucks Caramel Macchiato
+@notes	Use Starbucks original whole bean espresso and grind it to a fine espresso powder and brew it up in your espresso machine, and if you don't have an espresso machine, use a french press
+@category	drinks
+@cuisine	American
+
+
+Brew your @{espresso|2 oz} shots first using your @[espresso machine|or french press] @(cook|8) @(prep|5)
+Drizzle the @{Torani caramel syrup} around the inside of a @[glass]
+Fill the glass with @{ice|2 cup} and leave about 2" of room
+Add the @{Torani vanilla syrup} to the glass and top with the @{half & half|2 tbsp}
+Pour your espresso shots into the glass and top with @{ready-whip whipped cream|to top} and then drizzle @{Torani caramel syrup} over the top

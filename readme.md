@@ -2,9 +2,10 @@
 
 Recipes are stored in a plain text file with the extension .rcp and is loosely based on CookLang.  Even without using the parser, recipes are human readable, and can be printed as is.
 
-## File Header
+## File Meta Data
 
-Fields that can appear at the top of the file as denoted as follows:
+Each piece of meta data is defined using the @ symbol followed by a single word. The text for the meta data is tab delimited.
+
 
 `@name` Contains the name of the recipe
 

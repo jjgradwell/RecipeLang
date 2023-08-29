@@ -9,6 +9,8 @@ Meta data fields can be pretty much anything you like.  Fields are denoted with 
 
 The following are the only required fields for the meta data section.
 
+`@lang  en` Recipe is written in english (use any two letter language code)
+
 `@name  Hash Browns` The name of this recipe is Hash Browns
 
 `@desc  Better than store bought` The description of the recipe
